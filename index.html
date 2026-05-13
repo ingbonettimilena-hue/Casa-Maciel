@@ -10,32 +10,50 @@
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
+  <!-- GOOGLE FONTS -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <h1 class="logo">CASA MACIEL</h1>
-  <nav>
-    <a href="#Inicio">Inicio</a>
-    <a href="menu.html">Menú</a>
-    <a href="#galeria">Galería</a>
-  </nav>
-</header>
-
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <h2>CASA MACIEL</h2>
-    <p>Auténtica cocina mediterránea...</p>
-    <a href="menu.html">
-      <button>Ver Menú</button>
-    </a>
-  </div>
-</section>
 
+    <nav class="navbar">
+      <div class="logo">CASA MACIEL</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="#galeria">Galería</a></li>
+      </ul>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <h1>CASA MACIEL</h1>
+
+      <div class="line-decoration">
+        <span></span>
+        ✦
+        <span></span>
+      </div>
+
+      <p>Auténtica cocina mediterránea...</p>
+
+      <a href="menu.html" class="btn">Ver Menú</a>
+
+      </div>
+
+    </div>
+
+  </section>
 <!-- HISTORIA -->
 <section class="historia">
   <h2>Nuestra Historia</h2>
@@ -97,6 +115,6 @@
 <div class="footer-bottom">
       <p>© 2026 Diseñado por <a href="https://vibolabdev.com">ViBOlab</a>
 </div>
-
+<script src="script.js"></script>
 </body>
 </html>
