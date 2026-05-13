@@ -2,8 +2,11 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
+  background-color: #eaeaea;
 }
-
+h2{
+  color: #3c84bd;
+}
 /* HEADER */
 .header {
   display: flex;
@@ -14,7 +17,7 @@ body {
 }
 
 .logo {
-  color: #c46a1b;
+  color: #3c84bd;
   font-size: 20px;
 }
 
@@ -54,7 +57,7 @@ body {
   font-size: 20px;
   letter-spacing: 0.5px;
   border-radius: 10px;
-  background-color: #c46a1b;
+  background-color: #3c84bd;
   color: white;
   text-decoration: none;
   border: none;
@@ -62,7 +65,7 @@ body {
 }
 /* HISTORIA */
 .historia {
-  background: #f3eee3;
+  background: #eaeaea;
   padding: 80px;
   text-align: center;
 }
@@ -71,14 +74,31 @@ body {
   font-size: 32px;
 }
 
+.mapa{
+  text-align: center;
+  background-color: #eaeaea;
+  margin: 20px;
+}
+.mapa h2{
+  font-size: 32px;
+}
+.mapa iframe{
+  width: 900px;
+  height: 700px;
+  border: 0;
+}
 /* MENU */
 .menu {
   background: #eaeaea;
   padding: 80px;
+  text-align: center;
 }
 
 .menu h3 {
-  color: #c46a1b;
+  color: #3c84bd;
+}
+.menu h2 {
+  font-size: 32px;
 }
 
 .plato {
@@ -104,10 +124,13 @@ body {
 
 /* CONTACTO */
 .contacto {
-  background: #b34700;
+  background: #3c84bd;
   color: white;
   padding: 80px;
   text-align: center;
+}
+.contacto h2 {
+  color: white;
 }
 
 .galeria img {
@@ -170,4 +193,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+a {
+  color: rgb(56, 56, 56);
+  text-decoration: none;
 }
