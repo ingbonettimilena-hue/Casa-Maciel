@@ -1,120 +1,244 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Casa Maciel</title>
-  <link rel=""canonical" href"https://www.casamaciel.com/index.html">
-  <meta name="description" content="Ana Fischer Esperanza. Productos, Estetica.">
-  <meta name="keywords" content="Ana Fischer, Esperanza, Santa Fe.">
-  <meta name="author" content="Ana Fischer">
-  <meta name="robots" content="index, follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-  <!-- GOOGLE FONTS -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<section class="hero">
+  <!-- Toggle Button -->
+  <div class="theme-toggle-wrap">
+    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo">
+      <div class="toggle-track">
+        <div class="toggle-icons">
+          <span class="icon-moon">🌙</span>
+          <span class="icon-sun">☀️</span>
+        </div>
+        <div class="toggle-thumb"></div>
+      </div>
+      <span class="toggle-label" id="toggleLabel">Domingo mediodía</span>
+    </button>
+  </div>
 
-    <nav class="navbar">
-      <div class="logo">CASA MACIEL</div>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="menu.html">Menú</a></li>
-        <li><a href="#galeria">Galería</a></li>
-      </ul>
-    </nav>
-
-    <div class="overlay"></div>
-
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
+      <p class="hero-tagline">Restaurante</p>
+      <h1 class="hero-title">Casa<br><em>Maciel</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Una experiencia gastronómica de autor</p>
+    </div>
+    <div class="hero-scroll">
+      <span>↓</span>
+    </div>
+  </header>
 
-      <h1>CASA MACIEL</h1>
+  <!-- Menu Section -->
+  <section class="menu-section" id="menuSection">
 
-      <div class="line-decoration">
-        <span></span>
-        ✦
-        <span></span>
+    <!-- MENÚ OSCURO: Viernes y Sábado Noche -->
+    <div class="menu-panel menu-dark" id="menuNoche">
+      <div class="menu-header">
+        <span class="menu-badge">Menú especial</span>
+        <h2 class="menu-title">Viernes & Sábado</h2>
+        <p class="menu-subtitle">Cena — A partir de las 20:30 h</p>
       </div>
 
-      <p>Auténtica cocina mediterránea...</p>
+      <div class="menu-body">
+        <div class="menu-col">
+          <div class="course">
+            <h3 class="course-label">Entrantes</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Tartar de atún rojo</span>
+                <span class="dish-desc">aguacate ahumado, sésamo negro, ponzu</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Croqueta líquida de jamón</span>
+                <span class="dish-desc">ibérico de bellota, espuma de manchego</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Vieira a la brasa</span>
+                <span class="dish-desc">mantequilla de yuzu, huevas de trucha</span>
+              </li>
+            </ul>
+          </div>
 
-      <a href="menu.html" class="btn">Ver Menú</a>
+          <div class="course">
+            <h3 class="course-label">Principales</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Lomo de merluza salvaje</span>
+                <span class="dish-desc">pilpil de algas, aceite de hierbas del litoral</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Solomillo madurado 45 días</span>
+                <span class="dish-desc">reducción de Pedro Ximénez, trufa negra</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Arroz meloso de bogavante</span>
+                <span class="dish-desc">azafrán de La Mancha, alioli de lima</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
+        <div class="menu-col">
+          <div class="course">
+            <h3 class="course-label">Postres</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Coulant de chocolate negro</span>
+                <span class="dish-desc">helado de vainilla de Tahití, sal Maldon</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Crema catalana perfumada</span>
+                <span class="dish-desc">cardamomo, flor de azahar</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="course">
+            <h3 class="course-label">Maridaje</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Menú maridaje con vinos</span>
+                <span class="dish-desc">selección de bodegas españolas de autor</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Cava de bienvenida</span>
+                <span class="dish-desc">Brut Nature Reserva — cortesía de la casa</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-price">
+            <span class="price-label">Menú degustación</span>
+            <span class="price-value">68 €</span>
+            <span class="price-note">por persona · IVA incluido</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENÚ CLARO: Domingos mediodía -->
+    <div class="menu-panel menu-light" id="menuDia">
+      <div class="menu-header">
+        <span class="menu-badge">Menú del día</span>
+        <h2 class="menu-title">Domingos</h2>
+        <p class="menu-subtitle">Almuerzo — De 13:00 a 16:00 h</p>
       </div>
 
+      <div class="menu-body">
+        <div class="menu-col">
+          <div class="course">
+            <h3 class="course-label">Para empezar</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Gazpacho de tomate rosa</span>
+                <span class="dish-desc">pepino encurtido, aceite de albahaca</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Ensalada de burrata</span>
+                <span class="dish-desc">tomates de temporada, pesto de rúcula, nueces</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Pan de masa madre</span>
+                <span class="dish-desc">mantequilla de romero, aceite arbequina</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="course">
+            <h3 class="course-label">Principales</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Pollo de corral al horno</span>
+                <span class="dish-desc">limón confitado, patatas a lo pobre, ajo negro</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Pescado del día a la plancha</span>
+                <span class="dish-desc">verduras de temporada, salsa verde</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Pasta fresca con trufa</span>
+                <span class="dish-desc">parmesano reggiano, aceite de trufa blanca</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu-col">
+          <div class="course">
+            <h3 class="course-label">Postres</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Tarta de queso al horno</span>
+                <span class="dish-desc">mermelada de frutos del bosque</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Flan de huevo casero</span>
+                <span class="dish-desc">caramelo artesano, nata montada</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Fruta de temporada</span>
+                <span class="dish-desc">selección del mercado local</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="course">
+            <h3 class="course-label">Incluye</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <span class="dish-name">Pan y agua mineral</span>
+                <span class="dish-desc">pan artesano de masa madre</span>
+              </li>
+              <li class="dish">
+                <span class="dish-name">Vino de la casa o refresco</span>
+                <span class="dish-desc">1/4 de vino D.O. o bebida sin alcohol</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-price">
+            <span class="price-label">Menú dominical</span>
+            <span class="price-value">32 €</span>
+            <span class="price-note">por persona · IVA incluido</span>
+          </div>
+        </div>
+      </div>
     </div>
 
   </section>
-<!-- HISTORIA -->
-<section class="historia">
-  <h2>Nuestra Historia</h2>
-  <p>
-    En Casa Maciel, celebramos los sabores auténticos del mar Mediterráneo.
-    Cada plato es una historia de tradición, pasión y los mejores ingredientes frescos.
-  </p>
-</section>
 
-<!-- GALERIA -->
-<section class="menu" id="galeria">
-  <h2>Galería</h2>
-  
-  <div class="galeria">
-    
-    <div class="card">
-      <img src="/img/galeria1.jpg" alt="Plato 1">
-      <div class="overlay">
-        <h3>Carne con papas</h3>
+  <!-- Reservas -->
+  <section class="reservas">
+    <div class="reservas-inner">
+      <h2 class="reservas-title">Reserva tu mesa</h2>
+      <p class="reservas-text">Llámanos o escríbenos y te confirmaremos disponibilidad.</p>
+      <div class="reservas-actions">
+        <a href="tel:+34600000000" class="btn btn-primary">📞 Llamar ahora</a>
+        <a href="mailto:reservas@casamaciel.es" class="btn btn-outline">✉ Reservar por email</a>
       </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="/img/galeria2.jpg" alt="Plato 2">
-      <div class="overlay">
-        <h3>Salmón grillado</h3>
-      </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Casa Maciel</p>
+      <p class="footer-info">Calle Mayor 12 · Madrid · <a href="tel:+34600000000">+34 600 000 000</a></p>
+      <p class="footer-copy">© 2025 Casa Maciel · Todos los derechos reservados</p>
     </div>
-    
-    <div class="card">
-      <img src="/img/galeria3.jpg" alt="Plato 3">
-      <div class="overlay">
-        <h3>Postre con helado</h3>
-      </div>
-    </div>
-    
-    <div class="card">
-      <img src="/img/galeria4.jpg" alt="Postre">
-      <div class="overlay">
-        <h3>Postre con helado</h3>
-      </div>
-    </div>
-    
-  </div>
-</section>
-<section class="mapa">
-  <h2>Ubicacion</h2>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.63059051029!2d-60.594781499999996!3d-31.616580599999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5ab7b3002ca6f%3A0x348f314bd56e9598!2sCasa%20Maciel!5e0!3m2!1ses!2sar!4v1778683527301!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </footer>
 
-</section>
-
-<!-- CONTACTO -->
-<section class="contacto">
-  <h2>Visítanos</h2>
-  <p>Laborie 6479 - Colastine Norte</p>
-  <p>0342 15-591-6831</p>
-</section>
-
-<div class="footer-bottom">
-      <p>© 2026 Diseñado por <a href="https://vibolabdev.com">ViBOlab</a>
-</div>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
