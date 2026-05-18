@@ -453,11 +453,8 @@ body::before {
 }
 
 .postres-inner {
-  max-width: 1500px;
+  max-width: 1100px;
   margin: 0 auto;
-  text-align: left;
-  display:flex;
-  justify-content: flex-start;
 }
 
 /* ---------- Reservas ---------- */
@@ -668,17 +665,35 @@ body::before {
 .galeria .card{
     width: 300px;
     flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 18px;
+
+    position: relative;
+    z-index: 1;
+
+    transition: transform 0.35s ease;
 }
 
 .galeria .card img{
     width: 100%;
     height: 420px;
-
     object-fit: cover;
     border-radius: 18px;
-
     display: block;
+
+    transition: transform 0.35s ease;
 }
+
+/* efecto hover */
+.galeria .card:hover{
+    transform: scale(1.08);
+    z-index: 20;
+}
+
+.galeria .card:hover img{
+    transform: scale(1.03);
+}
+
 
 @keyframes carrusel{
     from{
@@ -689,17 +704,6 @@ body::before {
         transform: translateX(-50%);
     }
 }
-
-    background: rgba(10,10,10,0.45);
-
-    padding: 14px 24px;
-
-    border-radius: 50px;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255,255,255,0.08);
 
     @media (max-width: 768px){
 
