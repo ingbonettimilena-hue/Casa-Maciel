@@ -448,13 +448,19 @@ body::before {
 /* ---------- Postres ---------- */
 .postres {
   background: var(--bg);
-  padding: 6rem 2rem;
   transition: background 0.6s ease;
+  margin-top: 150px;
 }
 
 .postres-inner {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+.postres .menu-body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
 }
 
 /* ---------- Reservas ---------- */
