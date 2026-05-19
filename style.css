@@ -345,9 +345,6 @@ body::before {
   gap: 3rem;
 }
 
-@media (max-width: 700px) {
-  .menu-body { grid-template-columns: 1fr; gap: 2rem; }
-}
 
 .menu-col {
   display: flex;
@@ -602,11 +599,29 @@ body::before {
 
 
 /* NAV */
-.nav {
+.topbar {
   position: fixed;
-  top:20px;
-  left:30px;
-  z-index:999;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  pointer-events: none; /* los hijos capturan eventos */
+}
+
+.nav {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  pointer-events: all;
+}
+
+.theme-toggle-wrap {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  pointer-events: all;
 }
 
 /* MENÚ */
@@ -644,87 +659,138 @@ body::before {
 }
 
 .menu a:hover{
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .galeria{
-    width: 100%;
-    overflow: hidden;
-    padding: 50px 0;
-    position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 0;
+  position: relative;
 }
 
 .galeria-track{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-
-    width: fit-content;
-
-    animation: carrusel 30s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  
+  width: fit-content;
+  
+  animation: carrusel 30s linear infinite;
 }
 
 .galeria-track:hover{
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .galeria .card{
-    width: 300px;
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 18px;
-
-    position: relative;
-    z-index: 1;
-
-    transition: transform 0.35s ease;
+  width: 300px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  
+  position: relative;
+  z-index: 1;
+  
+  transition: transform 0.35s ease;
 }
 
 .galeria .card img{
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    border-radius: 18px;
-    display: block;
-
-    transition: transform 0.35s ease;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  
+  transition: transform 0.35s ease;
 }
 
 /* efecto hover */
 .galeria .card:hover{
-    transform: scale(1.08);
-    z-index: 20;
+  transform: scale(1.08);
+  z-index: 20;
 }
 
 .galeria .card:hover img{
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 
 @keyframes carrusel{
-    from{
-        transform: translateX(0);
-    }
-
-    to{
-        transform: translateX(-50%);
-    }
+  from{
+    transform: translateX(0);
+  }
+  
+  to{
+    transform: translateX(-50%);
+  }
 }
 
-    @media (max-width: 768px){
+@media (max-width: 768px){
 
-  .nav{
-      left: 15px;
-      top: 15px;
+  /* La topbar se convierte en barra horizontal real */
+  .topbar {
+    pointer-events: all;
+    background: rgba(10,10,10,0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 10px 16px;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .menu{
-      gap: 15px;
-      padding: 12px 18px;
+  /* Nav vuelve al flujo normal dentro del topbar */
+  .nav {
+    position: static;
+    pointer-events: all;
   }
 
-  .menu a{
-      font-size: 12px;
+  .menu {
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    gap: 18px;
+  }
+
+  .menu a {
+    font-size: 11px;
+    letter-spacing: 0.03em;
+  }
+
+  /* Toggle también vuelve al flujo */
+  .theme-toggle-wrap {
+    position: static;
+    pointer-events: all;
+  }
+
+  .theme-toggle {
+    padding: 0.35rem 0.5rem;
+    box-shadow: none;
+  }
+
+  .toggle-label {
+    display: none;
+  }
+
+}
+@media (max-width: 700px) {
+  .menu-body { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media screen and (max-width: 768px) {
+
+  .postres .menu-body {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .postres .menu-col {
+    width: 100%;
+    border: none;
+    padding: 0;
   }
 
 }
