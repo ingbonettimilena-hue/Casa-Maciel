@@ -8,57 +8,80 @@
   const label       = document.getElementById('toggleLabel');
   const menuNoche   = document.getElementById('menuNoche');
   const menuDia     = document.getElementById('menuDia');
+  const menuSabado  = document.getElementById('menuSabado');
 
-  // Textos del label según tema
+  // Estados posibles: noche, domingo, sabado
+  const STATES = ['noche', 'domingo', 'sabado'];
+  
+  // Textos del label según estado (indica a qué cambia si se pulsa)
   const LABELS = {
-    dark:  'Domingo mediodía',
-    light: 'Viernes & Sábado noche'
+    noche:   'Domingo mediodía',
+    domingo: 'Sábado mediodía',
+    sabado:  'Viernes & Sábado noche'
+  };
+
+  // Temas CSS según estado
+  const THEMES = {
+    noche:   'dark',
+    domingo: 'light',
+    sabado:  'light'
   };
 
   /**
-   * Aplica el tema y muestra el menú correcto.
-   * @param {'dark'|'light'} theme
+   * Aplica el estado y muestra el menú correcto.
+   * @param {'noche'|'domingo'|'sabado'} state
    * @param {boolean} [animate=true]
    */
-  function applyTheme(theme, animate = true) {
-    html.setAttribute('data-theme', theme);
+  function applyState(state, animate = true) {
+    // Aplicar tema CSS
+    html.setAttribute('data-theme', THEMES[state]);
 
-    // Actualizar label del botón (indica a qué cambia si se pulsa)
-    label.textContent = LABELS[theme];
+    // Actualizar label del botón
+    label.textContent = LABELS[state];
 
     // Mostrar/ocultar paneles de menú
-    if (theme === 'dark') {
+    menuNoche.classList.remove('active');
+    menuDia.classList.remove('active');
+    menuSabado.classList.remove('active');
+
+    if (state === 'noche') {
       menuNoche.classList.add('active');
-      menuDia.classList.remove('active');
-    } else {
+    } else if (state === 'domingo') {
       menuDia.classList.add('active');
-      menuNoche.classList.remove('active');
+    } else if (state === 'sabado') {
+      menuSabado.classList.add('active');
     }
 
     // Guardar preferencia
-    try { localStorage.setItem('cm-theme', theme); } catch (_) {}
+    try { localStorage.setItem('cm-state', state); } catch (_) {}
   }
 
   /**
-   * Alterna entre temas.
+   * Alterna entre estados (noche → domingo → sabado → noche).
    */
-  function toggleTheme() {
-    const current = html.getAttribute('data-theme') || 'dark';
-    const next    = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
+  function toggleState() {
+    const current = localStorage.getItem('cm-state') || 'noche';
+    const currentIndex = STATES.indexOf(current);
+    const nextIndex = (currentIndex + 1) % STATES.length;
+    const next = STATES[nextIndex];
+    applyState(next);
   }
 
   /**
-   * Inicialización: recuperar preferencia guardada o usar 'dark'.
+   * Inicialización: recuperar preferencia guardada o usar 'noche'.
    */
   function init() {
-    let saved = 'dark';
-    try { saved = localStorage.getItem('cm-theme') || 'dark'; } catch (_) {}
-    applyTheme(saved, false);
+    let saved = 'noche';
+    try {
+      saved = localStorage.getItem('cm-state') || 'noche';
+      // Validar que el estado guardado sea válido
+      if (!STATES.includes(saved)) saved = 'noche';
+    } catch (_) {}
+    applyState(saved, false);
   }
 
   // Evento del botón
-  btn.addEventListener('click', toggleTheme);
+  btn.addEventListener('click', toggleState);
 
   // Arrancar
   init();

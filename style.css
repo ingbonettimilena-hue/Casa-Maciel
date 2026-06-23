@@ -38,7 +38,7 @@ html {
   --grain-opacity: 0.04;
 }
 
-/* ---------- CSS Variables: LIGHT (Domingos mediodía) ---------- */
+/* ---------- CSS Variables: LIGHT (Domingos mediodía y Sábado mediodía) ---------- */
 [data-theme="light"] {
   --bg:           #f5f0e8;
   --bg-2:         #ede7db;
