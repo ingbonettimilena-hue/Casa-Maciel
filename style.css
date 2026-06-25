@@ -634,12 +634,12 @@ body::before {
   border-radius: 50px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(161, 150, 150, 0.08);
 }
 
 .menu a {
   text-decoration: none;
-  color: #163955;
+  color: #0584ec;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -793,4 +793,173 @@ body::before {
     padding: 0;
   }
 
+}
+
+/* ---------- Pastas Caseras ---------- */
+.pastas-caseras {
+  position: relative;
+  padding: 6rem 2rem;
+  min-height: 600px;
+  overflow: hidden;
+  transition: background 0.6s ease;
+}
+
+/* Imagen de fondo con overlay */
+.pastas-caseras::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/PastaCasera.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  z-index: 0;
+  transition: opacity 0.6s ease;
+}
+
+[data-theme="light"] .pastas-caseras::before {
+  opacity: 0.12;
+}
+
+/* Overlay de color para mantener legibilidad */
+.pastas-caseras::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    var(--bg-2) 0%,
+    transparent 50%,
+    var(--bg-2) 100%);
+  z-index: 1;
+  transition: background 0.6s ease;
+}
+
+.pastas-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pastas-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pastas-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  transition: color 0.6s ease;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.pastas-slogan {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--accent-light);
+  letter-spacing: 0.05em;
+  transition: color 0.4s ease;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.pastas-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Info */
+.pastas-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+.pastas-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-sec);
+  transition: color 0.4s ease;
+}
+
+/* Features en horizontal sin fondo blanco */
+.pastas-features {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border-acc);
+  border-bottom: 1px solid var(--border-acc);
+  transition: border-color 0.4s ease;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.feature-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+.pastas-contact {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pastas-caseras {
+    min-height: auto;
+  }
+
+  .pastas-caseras::before {
+    background-attachment: scroll;
+  }
+
+  .pastas-features {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .pastas-header {
+    margin-bottom: 3rem;
+  }
+
+  .pastas-contact {
+    justify-content: center;
+  }
 }
