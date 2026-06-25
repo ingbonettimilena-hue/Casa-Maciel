@@ -1,0 +1,19 @@
+# robots.txt para Casa Maciel Resto
+# https://www.casamacielresto.com/
+
+User-agent: *
+Allow: /
+
+# Permitir acceso a recursos importantes
+Allow: /img/
+Allow: /style.css
+Allow: /script.js
+
+# Bloquear archivos innecesarios
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /node_modules/
+Disallow: /*.log
+
+# Sitemap
+Sitemap: https://www.casamacielresto.com/sitemap.xml
