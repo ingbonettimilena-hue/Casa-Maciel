@@ -15,9 +15,9 @@
   
   // Textos del label según estado (indica a qué cambia si se pulsa)
   const LABELS = {
-    noche:   'Domingo mediodía',
-    domingo: 'Sábado mediodía',
-    sabado:  'Viernes & Sábado noche'
+    noche:   'Viernes & Sábado noche',
+    domingo: 'Domingo mediodía',
+    sabado:  'Sábado mediodía'
   };
 
   // Temas CSS según estado
